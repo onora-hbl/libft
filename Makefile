@@ -57,18 +57,26 @@ SRCS	+=	$(addprefix str_functions/, \
 						ft_strnstr.c \
 						ft_strrchr.c \
 						ft_strtrim.c \
+						ft_strcat.c \
+						ft_strcpy.c \
+						ft_strcmp.c \
 						ft_substr.c)
 SRCS	+=	get_next_line/get_next_line.c
 
-OBJS	=	${SRCS:.c=.o}
+_OBJS		=	${SRCS:.c=.o}
+OBJS		=	$(addprefix build/, $(_OBJS))
 
 NAME	= libft.a
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+INCLUDE	= -I.
 
-.c.o:
-				${CC} ${CFLAGS} -I . -c $< -o ${<:.c=.o}
+build/%.o	:	%.c
+	@if [ ! -d $(dir $@) ]; then\
+		mkdir -p $(dir $@);\
+	fi
+	$(CC) ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 all:		${NAME}
 
@@ -77,7 +85,7 @@ $(NAME):	${OBJS}
 				ranlib ${NAME}
 
 clean:
-				rm -f ${OBJS}
+				rm -rf build
 
 fclean:		clean
 				rm -f ${NAME}

@@ -59,6 +59,9 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
 int		ft_putnbr_hexa_fd(unsigned int n, int cap, int fd);
 int		ft_strequal(char *str1, char *str2);
+char	*ft_strcat(char *dest, char *src);
+char	*ft_strcpy(char *dest, const char *src);
+int	ft_strcmp(char *s1, char *s2);
 
 typedef struct s_list
 {
