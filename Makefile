@@ -32,7 +32,8 @@ SRCS	+=	$(addprefix put_functions/, \
 						ft_putendl_fd.c \
 						ft_putnbr_fd.c \
 						ft_putstr_fd.c \
-						ft_putnbr_hexa_fd.c)
+						ft_putnbr_hexa_fd.c \
+						ft_dprintf.c)
 SRCS	+=	$(addprefix str_functions/, \
 						$(addprefix char_functions/, \
 									ft_isalnum.c \
