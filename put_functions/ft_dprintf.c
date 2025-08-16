@@ -36,6 +36,16 @@ void ft_dprintf(int fd, const char *format, ...)
 				}
 				break;
 			}
+			case 'x': {
+				unsigned int num = va_arg(args, unsigned int);
+				ft_putnbr_hexa_fd(num, 0, fd);
+				break;
+			}
+			case 'X': {
+				unsigned int num = va_arg(args, unsigned int);
+				ft_putnbr_hexa_fd(num, 1, fd);
+				break;
+			}
 			case '%': {
 				write(fd, "%", 1);
 				break;
