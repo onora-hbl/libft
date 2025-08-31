@@ -19,7 +19,8 @@ SRCS	+= 	$(addprefix list_functions/, \
 						ft_lstlast.c \
 						ft_lstmap.c \
 						ft_lstnew.c \
-						ft_lstsize.c)
+						ft_lstsize.c \
+						ft_lstremove_if.c)
 SRCS	+=	$(addprefix mem_functions/, \
 						ft_bzero.c \
 						ft_calloc.c \

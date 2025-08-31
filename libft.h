@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdbool.h>
 
 # define BUFFER_SIZE 50
 
@@ -78,6 +79,9 @@ void	ft_lstdelone(list_t *lst, void (*del)(void *));
 void	ft_lstclear(list_t **lst, void (*del)(void *));
 void	ft_lstiter(list_t *lst, void (*f)(void *));
 list_t	*ft_lstmap(list_t *lst, void *(*f)(void *), void (*del)(void *));
+
+typedef bool (*cmp_t)(void *content, void *data);
+void ft_lstremove_if(list_t **lst, cmp_t cmp, void *data, void (*del)(void *));
 
 char	*get_next_line(int fd);
 void ft_dprintf(int fd, const char *format, ...);
